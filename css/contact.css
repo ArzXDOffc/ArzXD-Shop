@@ -1,0 +1,141 @@
+:root {
+    --night-background: rgb(26, 33, 90);
+    --night-surface: rgb(34, 41, 110);
+    --night-border: rgb(58, 65, 140);
+    --night-text: rgb(235, 237, 245);
+    --night-text-muted: rgb(170, 175, 210);
+    --night-accent: rgb(88, 101, 242);
+    --night-accent-hover: rgb(114, 137, 255);
+}
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: var(--night-background);
+    color: var(--night-text);
+    line-height: 1.5;
+}
+
+/* NAVBAR */
+.All-Page {
+    background-color: var(--night-surface);
+    display: flex;
+    gap: 24px;
+    padding: 16px 24px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-link {
+    color: var(--night-text);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: var(--night-accent-hover);
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--night-accent);
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+}
+
+.contact-section p {
+    font-size: 1rem;
+    color: var(--night-text-muted);
+    margin-bottom: 40px;
+}
+
+/* CONTACT CARDS */
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+.contact-card {
+    background-color: var(--night-surface);
+    color: var(--night-text);
+    border: 1px solid var(--night-border);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.contact-card h3 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* hover efek */
+.contact-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    color: var(--night-accent-hover);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .contact-cards {
+        gap: 16px;
+    }
+
+    .contact-card h3 {
+        font-size: 1rem;
+    }
+}
