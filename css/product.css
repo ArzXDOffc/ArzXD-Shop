@@ -1,0 +1,159 @@
+/* ===============================
+   VARIABEL WARNA
+================================= */
+:root {
+    --night-background: rgb(26, 33, 90);
+    --night-surface: rgb(34, 41, 110);
+    --night-border: rgb(58, 65, 140);
+    --night-text: rgb(235, 237, 245);
+    --night-text-muted: rgb(170, 175, 210);
+    --night-accent: rgb(88, 101, 242);
+    --night-accent-hover: rgb(114, 137, 255);
+}
+
+/* ===============================
+   GLOBAL RESET
+================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: var(--night-background);
+    color: var(--night-text);
+    line-height: 1.5;
+}
+
+/* ===============================
+   NAVBAR / HEADER
+================================= */
+.All-Page {
+    background-color: var(--night-surface);
+    display: flex;
+    gap: 24px;
+    padding: 16px 24px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-link {
+    color: var(--night-text);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: var(--night-accent-hover);
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--night-accent);
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===============================
+   PRODUCT PREVIEW LAYOUT (BESAR)
+================================= */
+.All-Products {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* PRODUCT CARD BESAR */
+.product-card {
+    background-color: var(--night-surface);
+    color: var(--night-text);
+    border: 1px solid var(--night-border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    max-height: 400px; /* Gambar besar tapi tidak terlalu tinggi */
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.product-card h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.product-link {
+    color: var(--night-accent);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 1px solid var(--night-accent);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.product-link:hover {
+    background-color: var(--night-accent);
+    color: var(--night-text);
+    transform: scale(1.05);
+}
+
+/* HOVER CARD EFFECT */
+.product-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+/* SCROLL OFFSET */
+#murlog {
+    scroll-margin-top: 80px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .All-Products {
+        padding: 20px 12px;
+        gap: 24px;
+    }
+
+    .product-card h5 {
+        font-size: 1.2rem;
+    }
+
+    .product-card img {
+        max-height: 300px;
+    }
+}
